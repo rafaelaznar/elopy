@@ -70,7 +70,7 @@
                     for (j = 1; j <= 10; j++) {
                         (function (i, j) {
                             $.ajax({
-                                url: "http://daw.ausiasmarch.net:8081/sermiller/control?op1=" + i + "&op2=" + j + "&maxdelay=" + (5000 - (i * j * 40)),
+                                url: "http://localhost:8081/sermiller/control?op1=" + i + "&op2=" + j + "&maxdelay=" + (5000 - (i * j * 40)),
                                 type: "GET",
                                 dataType: "json",
                                 xhrFields: {
@@ -80,6 +80,8 @@
                                     $("#" + i + 'x' + j).removeClass("spinner-border spinner-border-sm");
                                     //$("#" + i + 'x' + j).html(source.result);
                                     document.getElementById(i + 'x' + j).innerHTML = source.result;
+                                    //console.log("valores de i y de j: ",i,j);
+
                                 }
                             });
                         })(i, j);
